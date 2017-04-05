@@ -8,6 +8,5 @@ To execute code in linux install freeglut3
 
 To execute the code use
 
-	gcc program01.cpp -o a.out -lglu -lGL -lglut
-	./a.out
+	gcc program01.cpp -o a.out -lglu -lGL -lglut ; ./a.out
 
