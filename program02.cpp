@@ -1,3 +1,11 @@
+/*
+
+      CPP Program to make a graphic window
+      using openGL graphics library.
+
+      Program to show the use of openGL primitives.
+
+*/
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>

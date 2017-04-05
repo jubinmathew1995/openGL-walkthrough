@@ -12,3 +12,4 @@ To execute the code use
 
 
 01. [making window](../../tree/master/program01.cpp) - use openGL library to make a window.
+02. [openGL_primitives](../../tree/master/program02.cpp) - shows the use of basic available openGL-primitives functions.
