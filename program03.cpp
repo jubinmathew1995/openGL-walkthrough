@@ -64,7 +64,11 @@ static void ResizeFunction(int width, int height)
 {
     windowHeight=height;
     windowWidth=width;
-    glViewport(0, 0, width, height);
+    glViewport(0, 0, (GLsizei)width, (GLsizei)height);
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    gluPerspective(60, (GLfloat)width / (GLfloat)height, 1.0, 1.0);
+    glMatrixMode(GL_MODELVIEW); 
 }
 
 static void displayFunction(void)
