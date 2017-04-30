@@ -68,11 +68,11 @@ void RenderFunction(void)
   glutPostRedisplay();
 }
 
-void drawPoints (float x,float y,float size=5.0) 
+void drawPoints (float x,float y,float size=5.0)
 {
-    glPointSize(size);	// sers the width of the point 
+    glPointSize(size);	// sers the width of the point
     glColor3f(1.0,0.0,0.0);
-    glBegin(GL_POINTS); 
+    glBegin(GL_POINTS);
 	    glVertex3f((2*x/CurrentWidth), (2*y/CurrentHeight), 0.0);
     glEnd();
 }
@@ -80,18 +80,18 @@ void drawPoints (float x,float y,float size=5.0)
 void drawAxes (void)
 {
     glColor3f(1.0,1.0,1.0);
-    glBegin(GL_LINES); 
+    glBegin(GL_LINES);
 	    glVertex3f(-1.0f, 0.0f, 0.0f);
 	    glVertex3f(1.0f, 0.0f, 0.0f);
 	    glVertex3f(0.0f,-1.0f, 0.0f);
 	    glVertex3f(0.0f,1.0f,0.0f);
-    glEnd();	
+    glEnd();
 }
 
 void drawTriangle(void)
 {
     glColor3f(0.0,1.0,0.0);
-    glBegin(GL_TRIANGLES); 
+    glBegin(GL_TRIANGLES);
 	    glVertex3f(-0.3f, 0.0f, 0.0f);
 	    glVertex3f(0.1f, 0.3f, 0.0f);
 	    glVertex3f(0.2f,-0.3f, 0.0f);
@@ -101,7 +101,7 @@ void drawTriangle(void)
 void drawQuads(void)
 {
 	glColor3f(0.0,0.0,1.0);
-    glBegin(GL_QUADS); 
+    glBegin(GL_QUADS);
 	    glVertex3f(0.3f,-0.1f, 0.0f);
 	    glVertex3f(0.6f,-0.1f, 0.0f);
 	    glVertex3f(0.6f,-0.3f, 0.0f);
@@ -113,7 +113,7 @@ void drawLineLoop(void)
 {
 	glLineWidth(3.0);	// sets the width fo the line which it is going to make
     glColor3f(1.0,1.0,0.0);
-    glBegin(GL_LINE_LOOP); 
+    glBegin(GL_LINE_LOOP);
 	    glVertex3f(0.0f,1.0f , 0.0);
     	glVertex3f(1.0f,0.0f , 0.0);
     	glVertex3f(0.0f,-1.0f , 0.0);
