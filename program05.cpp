@@ -1,3 +1,11 @@
+/*
+
+CPP Program to make a graphic window
+using openGL graphics library.
+
+Program to load a png images in the glut window.
+
+*/
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
