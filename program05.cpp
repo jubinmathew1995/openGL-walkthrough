@@ -23,9 +23,7 @@ int windowWidth=800,windowHeight=600;
 
 // function prototype
 static void displayFunction(void);
-static void idleFunction(void);
-static void keyFunction(unsigned char, int, int);
-static void processSpecialKeys(int, int, int);
+
 ////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////
 // vector in which the image is loaded.
@@ -66,30 +64,13 @@ int main(int argc, char *argv[])
     glutInitWindowSize(windowWidth,windowHeight);
     glutInitWindowPosition(0,0);
     glutCreateWindow(WINDOW_TITLE_PREFIX);
-
-    // register callbacks
     glutDisplayFunc(displayFunction);
-
-    // keyFunction is called whenever an keyboard event is encountered.
-    glutKeyboardFunc(keyFunction);
-
-    // added special keyboard keys like up,down,left and right arroe keys.
-    glutSpecialFunc(processSpecialKeys);
-
-    // this IDLE tells the glut to keep calling render function
-    // to allow animations.
-    glutIdleFunc(idleFunction);
-
-    // sets the background color RED:GREEN:BLUE:ALPHA
     glClearColor((23.0/255),(32.0/255),(42.0/255),0);
-
     gluOrtho2D(0,windowWidth,0,windowHeight);
 
-    // Enabling transparency for the color buffer.
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-    // enter GLUT event processing cycle/
     glutMainLoop();
 
     return 1;
@@ -97,7 +78,6 @@ int main(int argc, char *argv[])
 
 static void displayFunction(void)
 {
-    // clear previous colors.
     glClear(GL_COLOR_BUFFER_BIT);
 
     /////////////////////////////////////////////////////////////
@@ -109,26 +89,12 @@ static void displayFunction(void)
     glDrawPixels(logoWidth,logoHeight, GL_RGBA, GL_UNSIGNED_BYTE, &img[0]);
     /////////////////////////////////////////////////////////////
     /////////////////////////////////////////////////////////////
-    
+
     glColor3ub(255,255,255);
-    // swaps the front and back buffers.
     glutSwapBuffers();
 }
 
 static void idleFunction(void)
-{
-    // tells GULT to continously redisplay/call the
-    // display function continously, so that animations
-    // can be possible.
-    glutPostRedisplay();
-}
-
-static void keyFunction(unsigned char key, int x, int y)
-{
-    glutPostRedisplay();
-}
-
-static void processSpecialKeys(int key, int x, int y)
 {
     glutPostRedisplay();
 }
