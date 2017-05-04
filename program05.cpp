@@ -48,7 +48,7 @@ void load_images()
 //
 // NOTE: image must be in the same directory as that of the source
 //       file or MUST be relative to that of the location of the
-//       source porgram file.
+//       source program file.
 ///////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////
 
@@ -83,6 +83,7 @@ static void displayFunction(void)
     /////////////////////////////////////////////////////////////
     /////////////////////////////////////////////////////////////
     // setting the **LOWER LEFT BOTTON coodinate where the image must be loaded.
+    // image will be loaded from the lower left bottom coodinate.
     glRasterPos2i(windowWidth/2-(logoWidth/2),windowHeight/2-(logoHeight/2));
     // this function draw the image, must pass pointer to the image vector which
     // it created.
