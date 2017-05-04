@@ -26,12 +26,17 @@ static void displayFunction(void);
 static void idleFunction(void);
 static void keyFunction(unsigned char, int, int);
 static void processSpecialKeys(int, int, int);
-
+////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
+// vector in which the image is loaded.
 std::vector <unsigned char> img;
+// set the png image resolution.
 unsigned logoWidth=542;
 unsigned logoHeight=550;
+
 void load_images()
 {
+    // use the name of the image in this logoname
     const char* logoName="abcd.png";
     int error;
     if((error=lodepng::decode(img,logoWidth,logoHeight,logoName)))
@@ -40,6 +45,15 @@ void load_images()
         exit(1);
     }
 }
+// NOTE: always the resolution of the image must be less than the
+//       resolution of the glut window which you created.
+//
+// NOTE: image must be in the same directory as that of the source
+//       file or MUST be relative to that of the location of the
+//       source porgram file.
+///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+
 int main(int argc, char *argv[])
 {
     // init GLUT and create Window
@@ -85,8 +99,17 @@ static void displayFunction(void)
 {
     // clear previous colors.
     glClear(GL_COLOR_BUFFER_BIT);
+
+    /////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////
+    // setting the **LOWER LEFT BOTTON coodinate where the image must be loaded.
     glRasterPos2i(windowWidth/2-(logoWidth/2),windowHeight/2-(logoHeight/2));
+    // this function draw the image, must pass pointer to the image vector which
+    // it created.
     glDrawPixels(logoWidth,logoHeight, GL_RGBA, GL_UNSIGNED_BYTE, &img[0]);
+    /////////////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////////////
+    
     glColor3ub(255,255,255);
     // swaps the front and back buffers.
     glutSwapBuffers();
